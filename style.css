@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    padding: 2rem;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+.open{
+    text-align: center;
+    padding: 20px;
+}
+.text h1{
+    padding: 10px;
+    font-size: 3rem;
+}
+.text p {
+    line-height: 2rem;
+    font-size: 1.25rem;
+}
+.name{
+    font-size:x-large;
+}
+.top-nav_bar{
+    display: flex;
+    flex-direction: row;
+    font-size: medium;
+}
+.top-nav_bar h3{
+    margin: 0;
+    padding: 9px 20px;
+}
+img{
+    height: 300px;
+    width: 500px;
+}
+.text-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pic{
+    margin: 50px;
+}
+.text h2{
+    font-size: 1.5rem;
+}
+.texts p{
+    font-size: medium;
+    font-weight: 500;
+    line-height: 2rem;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.quote{
+    font-size: large;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+#update-button{
+    text-align: center;
+    font-size: xx-large;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.box {
+    display: inline-block;
+    padding: 3rem 4rem;
+    background-color: #E5E7EB;
+    border-radius: 10px;
+    text-align: center;
+    margin: 1.5rem;
+}
+.box a {
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+.box:hover {
+    background-color: #177cbf;
+}
+.quote-container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.result{
+    display: inline-block;
+    background-color: rgb(218, 158, 158);
+    padding: 3rem;
+}
+.result:hover{
+    background-color:#177cbf;
+}
+#quote-author, #quote-category{
+    font-size: x-large;
+}
