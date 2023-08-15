@@ -5,7 +5,8 @@ const updatebutton = document.getElementById("update-button");
 const quotecategory = document.getElementById("quote-category");
 const savebutton = document.getElementsByClassName("save");
 const cat1 = document.getElementsByClassName("box");
-
+const btn = document.getElementsByTagName("button");
+const input = document.getElementsByTagName("input");
 dark.addEventListener("click", function () {
   var element = document.body;
   if (element.style.backgroundColor === "white") {
@@ -34,6 +35,10 @@ cat1[3].addEventListener("click", function () {
   url = "https://famous-quotes4.p.rapidapi.com/random?category=dating&count=1";
   updatequote();
 });
+btn[0].addEventListener("click", function () {
+  url = "https://famous-quotes4.p.rapidapi.com/random?category=sports&count=10";
+  numupdatequote();
+});
 async function fetchRandomquote() {
   try {
     const response = await fetch(url, options);
@@ -52,7 +57,31 @@ async function updatequote() {
   }
 }
 updatebutton.addEventListener("click", updatequote);
-
+async function numupdatequote() {
+  const quotedata = await fetchRandomquote();
+  if (quotedata) {
+    for (let i = 0; i < quotedata.length; i++) {
+      var divElement = document.createElement("div");
+      divElement.className = "result";
+      var quoteTextelement = document.createElement("p");
+      quoteTextelement.className = "quote";
+      quoteTextelement.id = "quote-text";
+      var quoteCategory = document.createElement("p");
+      quoteCategory.className = "category";
+      quoteCategory.id = "quote-category";
+      var quoteAuthorElement = document.createElement("p");
+      quoteAuthorElement.className = "author";
+      quoteAuthorElement.id = "quote-author";
+      divElement.appendChild(quoteTextelement);
+      divElement.appendChild(quoteAuthorElement);
+      divElement.appendChild(quoteCategory);
+      document.body.appendChild(divElement);
+      quoteTextelement.innerHTML = quotedata[i].text;
+      quoteCategory.innerHTML = quotedata[i].category + " Quote";
+      quoteAuthorElement.innerHTML = quotedata[i].author + " Author";
+    }
+  }
+}
 /* declare a async function name(){} 
 1. try - to fetch the data
    1. store the response in a varaible using const response = await fetch(url,options)
